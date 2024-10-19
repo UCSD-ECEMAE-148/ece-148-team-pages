@@ -918,11 +918,9 @@ Instructions</a></p>
 <p>Connect the USB JoyStick Dongle into the JTN and then list the input
 devices again</p>
 <p>ls /dev/input</p>
-<blockquote>
 <p>(env) jetson@ucsdrobocar00:~/projects/d3$ ls /dev/input</p>
 <p>by-id event0 event2 event4 mice mouse1</p>
 <p>by-path event1 event3 [js0] mouse0</p>
-</blockquote>
 <p>We are looking for a js0</p>
 <h3 id="other-joystick-controllers">Other JoyStick Controllers</h3>
 <p>JoyStick Controllers - either the Logitech F-10 or PS4</p>
@@ -978,41 +976,37 @@ openmpi-bin libopenmpi-dev libopenblas-dev git nano
 <p><a href="https://github.com/NVIDIA/jetson-gpio">https://github.com/NVIDIA/jetson-gpio</a></p>
 <pre><code>pip3 install Jetson.GPIO
 </code></pre>
-<blockquote>
 <p>If the pip install complains about ownership of the directory*</p>
 <p>then execute the following command</p>
 <p>sudo chown -R jetson:jetson /home/jetson/.cache/pip</p>
 <p>ex:</p>
 <p>WARNING: The directory '/home/jetson/.cache/pip/http' or its parent
-directory is not owned by the current user and the cache has been
-disabled. Please check the permissions and owner of that directory. If
-executing pip with sudo, you may want sudo's -H flag.</p>
+ directory is not owned by the current user and the cache has been
+ disabled. Please check the permissions and owner of that directory. If
+ executing pip with sudo, you may want sudo's -H flag.</p>
 <p>WARNING: The directory '/home/jetson/.cache/pip' or its parent
-directory is not owned by the current user and caching wheels has been
-disabled. check the permissions and owner of</p>
+ directory is not owned by the current user and caching wheels has been
+ disabled. check the permissions and owner of</p>
 <p>that directory. If executing pip with sudo, you may want sudo's -H
-flag.</p>
+ flag.</p>
 <p>If pip breaks for some reason, you can reinstall it with the following
-lines</p>
+ lines</p>
 <p>python3 -m pip uninstall pip</p>
 <p>sudo apt install python3-pip --reinstall</p>
 <p>If the install request elevated privileges, execute the following
-command</p>
+ command</p>
 <p>sudo pip3 install Jetson.GPIO</p>
 <p>if pip has a new version</p>
 <p>pip3 install --upgrade pip</p>
-</blockquote>
 <p>Let's make sure the user jetson can use gpio</p>
 <p>sudo groupadd -f -r gpio</p>
 <p>sudo usermod -a -G gpio jetson</p>
-<blockquote>
 <p>sudo cp /opt/nvidia/jetson-gpio/etc/99-gpio.rules /etc/udev/rules.d/</p>
 <p>28Jan20 - did not work with JetPack3.4</p>
 <p>15May21- did not work with JetPack4.5</p>
 <p>19Oct21 - did not work with JetPack4.6</p>
 <p>18Sep22 - did not work with JetPack4.6.2</p>
 <p>Will get back to it later if the jetson user can not access GPIO</p>
-</blockquote>
 <p>sudo udevadm control --reload-rules &amp;&amp; sudo udevadm trigger</p>
 <p>We want to have control over the versions of each software library to
 minimize the framework from</p>
@@ -1037,10 +1031,8 @@ and one subdirectory</p>
 </code></pre>
 <pre><code>pip3 install virtualenv
 </code></pre>
-<blockquote>
 <p>if complains about user permission</p>
 <p>pip3 install virtualenv --user</p>
-</blockquote>
 <p>We will create a virtual environment called donkey since our AI
 framework is based on the Donkey Car project</p>
 <pre><code>python3 -m virtualenv -p python3 donkey --system-site-packages
@@ -1061,25 +1053,25 @@ when using ROS2</p>
 <p>At this point, using pip and pip3 should be the same as using pip3 by
 default in this virtual environment.</p>
 <p>https://docs.donkeycar.com/guide/robot_sbc/setup_jetson_nano/ 46</p>
-<blockquote>
-<h1 id="it-is-necessary-to-create-a-link-to-it">it is necessary to create a link to it</h1>
-<h1 id="go-to-the-folder-where-opencvs-native-library-is-built">Go to the folder where OpenCV's native library is built</h1>
-<h1 id="cd-usrlocallibpython36site-packagescv2python-36">cd /usr/local/lib/python3.6/site-packages/cv2/python-3.6</h1>
-<h1 id="rename">Rename</h1>
-<h1 id="mv-cv2cpython-36m-xxx-linux-gnuso-cv2so">mv cv2.cpython-36m-xxx-linux-gnu.so cv2.so</h1>
-<h1 id="go-to-your-virtual-environments-site-packages-folder-if-previously">Go to your virtual environments site-packages folder if previously</h1>
-<p>set</p>
-<h1 id="cd-envlibpython36site-packages">cd ~/env/lib/python3.6/site-packages/</h1>
-<h1 id="or-just-go-to-your-home-folder-if-not-set-a-venv-site-packages">Or just go to your home folder if not set a venv site-packages</h1>
-<p>folder</p>
-<h1 id="cd">cd ~</h1>
-<h1 id="symlink-the-native-library">Symlink the native library</h1>
-<h1 id="ln-s-usrlocallibpython36site-packagescv2python-36cv2so">ln -s /usr/local/lib/python3.6/site-packages/cv2/python-3.6/cv2.so</h1>
-<p>cv2.so</p>
-<h1 id="note-that-it-is-almost-mandatory-to-create-a-virtual-environment-in">NOTE that it is almost mandatory to create a virtual environment in</h1>
-<p>order to properly install</p>
-<h1 id="tensorflow-scipy-and-keras-and-always-a-best-practice">tensorflow, scipy and keras, and always a best practice.</h1>
-</blockquote>
+<p>it is necessary to create a link to it</p>
+<p>Go to the folder where OpenCV's native library is built</p>
+<pre><code> cd /usr/local/lib/python3.6/site-packages/cv2/python-3.6
+</code></pre>
+<p>Rename</p>
+<pre><code> mv cv2.cpython-36m-xxx-linux-gnu.so cv2.so
+</code></pre>
+<p>Go to your virtual environments site-packages folder if previously
+ set</p>
+<pre><code> cd ~/env/lib/python3.6/site-packages/
+</code></pre>
+<p>#Or just go to your home folder if not set a venv site-packages
+ folder</p>
+<p>cd ~</p>
+<p>Symlink the native library</p>
+<p>ln -s /usr/local/lib/python3.6/site-packages/cv2/python-3.6/cv2.so
+ cv2.so</p>
+<p>NOTE that it is almost mandatory to create a virtual environment in
+ order to properly install tensorflow, scipy and keras, and always a best practice.</p>
 <pre><code>cd ~/projects/envs/donkey/lib/python3.6/site-packages/
 </code></pre>
 <pre><code>ln -s /usr/local/lib/python3.6/site-packages/cv2/python-3.6/cv2.so
@@ -1091,11 +1083,9 @@ default in this virtual environment.</p>
 <h1 id="testing-to-see-if-opencv-is-installed-in-the-virtual-env">Testing to see if OpenCV is installed in the virtual env.</h1>
 <pre><code>python3 -c 'import cv2 as cv; print(cv.__version__)'
 </code></pre>
-<blockquote>
 <p>(donkey) <strong>jetson@ucsdrobocar-xxx-yy</strong>:<strong>~/projects/envs/donkey</strong>$
-python3 -c 'import cv2 as cv; print(cv.<strong>version</strong>)'</p>
+ python3 -c 'import cv2 as cv; print(cv.<strong>version</strong>)'</p>
 <p>4.6.0</p>
-</blockquote>
 <h1 id="we-wont-use-python2-but-just-in-case-one-will-need-it-for-some">We won't use Python2, but just in case one will need it for some</h1>
 <p>reason</p>
 <pre><code>python2 -c 'import cv2 as cv; print(cv.__version__)'
@@ -1140,22 +1130,20 @@ and clicking the plus button</p>
 <p><img alt="" src="../10images/media/image33.png" /></p>
 <p>Add 4G of swap and press S to enable it.</p>
 <p><img alt="" src="../10images/media/image25.png" /></p>
-<blockquote>
 <p>Alternatively you can use the command line</p>
-<h1 id="disable-zram">Disable ZRAM:</h1>
+<p>#Disable ZRAM:</p>
 <p>sudo systemctl disable nvzramconfig</p>
 <h1 id="create-4gb-swap-file">Create 4GB swap file</h1>
 <p>sudo fallocate -l 4G /mnt/4GB.swap</p>
 <p>sudo chmod 600 /mnt/4GB.swap</p>
 <p>sudo mkswap /mnt/4GB.swap</p>
 <p>If you have an issue with the final command, you can try the
-following:</p>
+ following:</p>
 <p>sudo nano /etc/fstab</p>
-<h1 id="add-this-line-at-the-bottom-of-the-file">Add this line at the bottom of the file</h1>
+<p>#Add this line at the bottom of the file</p>
 <p>/mnt/4GB.swap swap swap defaults 0 0</p>
-<h1 id="reboot">Reboot</h1>
+<p>#Reboot</p>
 <p>sudo reboot now</p>
-</blockquote>
 <h1 id="installing-dependencies">Installing dependencies</h1>
 <p>Navigate to the directory where you will be installing the luxonis
 libraries using cd ~/projects</p>
@@ -1250,20 +1238,17 @@ camera</p>
 <h3 id="modifying-joystick">Modifying Joystick</h3>
 <p>Now let's change the type of joystick we use with Donkey</p>
 <p>nano myconfig.py</p>
-<blockquote>
 <p>JOYSTICK</p>
 <p>USE_JOYSTICK_AS_DEFAULT = True when starting the manage.py,
-when True, wil$</p>
+ when True, wil$</p>
 <p>JOYSTICK_MAX_THROTTLE = 0.5 this scalar is multiplied with the -1 to$</p>
 <p>JOYSTICK_STEERING_SCALE = 1.0 some people want a steering that is
-less$</p>
+ less$</p>
 <p>AUTO_RECORD_ON_THROTTLE = True if true, we will record whenever
-throttle$</p>
+ throttle$</p>
 <p>CONTROLLER_TYPE='F710'(ps3|ps4|xbox|nimbus|wiiu|F710)</p>
-</blockquote>
 <p>python manage.py drive</p>
 <p>ex</p>
-<blockquote>
 <p>Starting vehicle...</p>
 <p>Opening /dev/input/js0...</p>
 <p>Device name: Logitech Gamepad F710</p>
@@ -1278,13 +1263,11 @@ throttle$</p>
 <p>recorded 30 records</p>
 <p>recorded 40 records</p>
 <p>recorded 50 records</p>
-</blockquote>
 <p>The Right Joystick is the Throttle, the Left Joystick is the Steering</p>
 <p>The Y Button deletes 5s of driving at the default configuration =100
 records at 20 Hz</p>
 <p>The A Button is the emergency break</p>
 <p>Joystick Controls:</p>
-<blockquote>
 <p>+------------------+---------------------------+</p>
 <p>| control | action |</p>
 <p>+------------------+---------------------------+</p>
@@ -1300,17 +1283,14 @@ records at 20 Hz</p>
 <p>| left_stick_horz | set_steering |</p>
 <p>| right_stick_vert | set_throttle |</p>
 <p>+------------------+---------------------------+</p>
-</blockquote>
 <p>If your joystick is not returning to neutral</p>
 <p>You can add a deadzone value</p>
 <p>on myconfig.py</p>
 <p>ex:</p>
-<blockquote>
 <p>NETWORK_JS_SERVER_IP = "192.168.0.1"when listening for network
-joystick cont$</p>
+ joystick cont$</p>
 <p>JOYSTICK_DEADZONE = 0.01 when non zero, this is the smallest throt$</p>
 <p>JOYSTICK_THROTTLE_DIR = -1.0 use -1.0 to flip forward/backward, use $</p>
-</blockquote>
 <p>Lets Integrate the JTN and PWM Controller into the RC Chassis</p>
 <p>Charge your LiPo Battery</p>
 <p>After you charge your Lithium Polymer (LiPo) battery(ries) - <a href="https://rogershobbycenter.com/lipoguide/">some info
