@@ -72,9 +72,6 @@ plugins:
         - name: fall24team1
           import_url: https://github.com/UCSD-ECEMAE-148/fall-2024-final-project-team-1.git?branch=main
           imports: [ /README.md, /images/* ]
-        - name: fall24team2
-          import_url: https://github.com/UCSD-ECEMAE-148/fall-2024-final-project-team-2.git?branch=main
-          imports: [ /README.md, /images/* ]
         - name: fall24team3
           import_url: https://github.com/UCSD-ECEMAE-148/fall-2024-final-project-team-3.git?branch=main
           imports: [ /README.md, /images/* ]
@@ -133,7 +130,6 @@ nav:
   - ROS2 Guidebook: markdown-documentation/ROS2_Guide_Book.pdf
   - Fall 24:
       - Team 1: fall24team1/README.md
-      - Team 2: fall24team2/README.md
       - Team 3: fall24team3/README.md
       - Team 4: fall24team4/README.md
       - Team 5: fall24team5/README.md
