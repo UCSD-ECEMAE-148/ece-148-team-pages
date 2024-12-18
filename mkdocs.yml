@@ -115,8 +115,8 @@ nav:
   - GPS Laps: markdown-documentation/10-UCSD-Robocar-ECE-&-MAE-148/11doc.md
   - UCSD Robocar Framework: markdown-documentation/100-UCSD-Robocar-Framework/100-UCSD-Robocar-Framework.md
   - ROS2 Guidebook: markdown-documentation/ROS2_Guide_Book.pdf
- # - Fall 24:
- #     - Team 1: fall24team1/README.md
+  - Fall 24:
+      - Team 1: fall24team1/README.md
  #     - Team 3: fall24team3/README.md
  #     - Team 4: fall24team4/README.md
  #     - Team 5: fall24team5/README.md
