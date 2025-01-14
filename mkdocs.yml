@@ -117,7 +117,7 @@ nav:
   - GPS Laps: markdown-documentation/10-UCSD-Robocar-ECE-&-MAE-148/11doc.md
   - UCSD Robocar Framework: markdown-documentation/100-UCSD-Robocar-Framework/100-UCSD-Robocar-Framework.md
   - ROS2 Guidebook: markdown-documentation/ROS2_Guide_Book.pdf
-  - Fall 2024 Final Projects: markdown-documentation/FinalProjects.md
+  - Final Projects List: markdown-documentation/FinalProjects.md
  #Fall 2024 readmes sometimes do not work due to differences in how mkdocs and github interpret readmes
  # - Fall 24:
  #     - Team 1: fall24team1/README.md
