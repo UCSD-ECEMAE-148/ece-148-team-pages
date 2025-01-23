@@ -1014,28 +1014,11 @@ ln \-s /usr/local/lib/python3.8/site-packages/cv2/python-3.8/cv2.so cv2.so
 <p>Checking install for python3  </p>
 <pre><code>python3  
 import cv2  
-cv2.\_\_version\_\_  
+cv2.__version__  
 exit ()
 </code></pre>
-<p># Resulting on something similar to this </p>
-<p><strong>jetson@ucsdrobocar-xxx-yy</strong>:<strong>\~</strong>$ python3<br />
-Python 3.6.9 (default, Jun 29 2022, 11:45:57) <br />
-[GCC 8.4.0] on linux<br />
-Type "help", "copyright", "credits" or "license" for more information.<br />
-&gt;&gt;&gt; import cv2<br />
-&gt;&gt;&gt; cv2.__version__<br />
-'4.6.0'<br />
-&gt;&gt;&gt; exit()<br />
-<strong>jetson@ucsdrobocar-xxx-yy</strong>:<strong>\~</strong>$ </p>
-<p>Python 3.8.10 (default, May 26 2023, 14:05:08) <br />
-[GCC 9.4.0] on linux<br />
-Type "help", "copyright", "credits" or "license" for more information.<br />
-&gt;&gt;&gt; import cv2<br />
-&gt;&gt;&gt; cv2.__version__<br />
-'4.8.0'<br />
-&gt;&gt;&gt; exit ()</p>
 <p># Here is quicker way to test cv2 on Python 3</p>
-<pre><code>python3 \-c 'import cv2 as cv; print(cv.\_\_version\_\_)'
+<pre><code>python3 \-c 'import cv2 as cv; print(cv.__version__)'
 </code></pre>
 <pre><code>4.6.0
 </code></pre>
