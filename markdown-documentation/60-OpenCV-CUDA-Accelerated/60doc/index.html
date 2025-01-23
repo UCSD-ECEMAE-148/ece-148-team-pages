@@ -806,7 +806,7 @@
 (GPU acceleration).</p>
 <p># Search the web if you are curious why.</p>
 <p>#
-<a href="https://forums.developer.nvidia.com/t/opencv-cuda-python-with-jetson-nano/72902">[https://forums.developer.nvidia.com/t/opencv-cuda-python-with-jetson-nano/72902]{.underline}</a></p>
+<a href="https://forums.developer.nvidia.com/t/opencv-cuda-python-with-jetson-nano/72902">[https://forums.developer.nvidia.com/t/opencv-cuda-python-with-jetson-nano/72902]</a></p>
 <p>Youtube Video about the process:
 <a href="https://www.youtube.com/watch?v=art0-99fFa8">https://www.youtube.com/watch?v=art0-99fFa8</a></p>
 <h1 id="checking-opencv-build-information">Checking openCV build information</h1>
@@ -1069,33 +1069,12 @@ cv2.so
 
 import cv2
 
-cv2.\_\_version\_\_
+cv2.__version__
 
 exit ()
 </code></pre>
-<p># Resulting on something similar to this</p>
-<p><strong>jetson@ucsdrobocar-xxx-yy</strong>:<strong>\~</strong>\$ python3</p>
-<p>Python 3.6.9 (default, Jun 29 2022, 11:45:57)</p>
-<p>[GCC 8.4.0] on linux</p>
-<p>Type \"help\", \"copyright\", \"credits\" or \"license\" for more
-information.</p>
-<p>&gt;&gt;&gt; import cv2</p>
-<p>&gt;&gt;&gt; cv2.__version__</p>
-<p>\'4.6.0\'</p>
-<p>&gt;&gt;&gt; exit()</p>
-<p><strong>jetson@ucsdrobocar-xxx-yy</strong>:<strong>\~</strong>\$</p>
-<blockquote>
-<p>Python 3.8.10 (default, May 26 2023, 14:05:08)</p>
-<p>[GCC 9.4.0] on linux</p>
-<p>Type \"help\", \"copyright\", \"credits\" or \"license\" for more
-information.</p>
-<p>&gt;&gt;&gt; import cv2</p>
-<p>&gt;&gt;&gt; cv2.__version__</p>
-<p>\'4.8.0\'</p>
-<p>&gt;&gt;&gt; exit ()</p>
-</blockquote>
 <p># Here is quicker way to test cv2 on Python 3</p>
-<pre><code>python3 -c \'import cv2 as cv; print(cv.\_\_version\_\_)\'
+<pre><code>python3 -c 'import cv2 as cv; print(cv.__version__)'
 </code></pre>
 <blockquote>
 <p>4.6.0</p>
