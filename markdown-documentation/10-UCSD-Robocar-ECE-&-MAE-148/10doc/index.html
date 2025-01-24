@@ -1233,7 +1233,7 @@ git clone https://github.com/autorope/donkeycar
 cd donkeycar
 git fetch --all --tags -f
 git checkout 4.5.1
-pip install -e .[nano]
+pip install -e .
 
 </code></pre>
 <p>Lets enable the use of synchronization of files with remote computers
@@ -1378,8 +1378,10 @@ file transfer protocol):</p>
 <p>Once these have been replaced, you should run</p>
 <pre><code>python manage.py drive
 </code></pre>
-<p>It should first throw a pyvesc import error. Follow the description in
-the terminal to install the needed libraries</p>
+<p>It should first throw a pyvesc import error.<br />
+To import the library, run</p>
+<pre><code>pip install git+https://github.com/LiamBindle/PyVESC.git
+</code></pre>
 <p>Then run it again. It should throw a permissions error. Follow the
 advice on how to fix the error with chmod</p>
 <p>Int(10) error bug fix (Credit Saimai Lau and Albert Chang):
