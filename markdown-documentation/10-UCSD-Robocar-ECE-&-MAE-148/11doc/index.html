@@ -943,10 +943,8 @@
 <p>Run</p>
 <p>a.  cd quectel-lg69t-am.0.15.0/p1_runner (or if you cloned from github, cd quectel/p1_runner)</p>
 <p>b.  deactivate (This should get you out of the current environment)</p>
-<p>c.  wget
-    https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-pypy3-Linux-aarch64.sh
-    .</p>
-<p>d.  bash Mambaforge-pypy3-Linux-aarch64.sh</p>
+<p>c.  wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+d.  bash Miniforge-pypy3-Linux-aarch64.sh</p>
 <p>e.  Reboot the jetson</p>
 <p>f.  mamba create --name py37 -c conda-forge python=3.7 pip</p>
 <p>g.  mamba activate py37</p>
