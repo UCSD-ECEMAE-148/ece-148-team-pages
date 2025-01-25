@@ -1566,7 +1566,8 @@ AI_THROTTLE_MULT = 1.0              # this multiplier will scale every throttle 
 <p>Container for training models: (8 CPU, 1 GPU, 16 GB RAM)</p>
 <pre><code>launch-scipy-ml.sh -g 1 -i ucsdets/donkeycar-notebook:latest
 </code></pre>
-<p>When creating the GPU container, the terminal should look like:</p>
+<p>You may want to add in the flag -v 2080ti to get faster performance by selecting a better gpu. Or, you can specify one of the other gpu types in the datahub if the 2080ti gpus are all busy (like a5000 for example). The website <a href="https://datahub.ucsd.edu/hub/status">https://datahub.ucsd.edu/hub/status</a> has a list of gpu's and their status. They do sometimes get booked up.
+When creating the GPU container, the terminal should look like:</p>
 <p><img alt="alt text" src="../image-7.png" /></p>
 <p>You should only have one container open at a time.</p>
 <p>When launching a container it creates a "pod"; in order to exit the pod, run in the terminal:</p>
