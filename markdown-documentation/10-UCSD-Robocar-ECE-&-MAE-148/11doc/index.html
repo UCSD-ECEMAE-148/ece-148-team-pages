@@ -941,13 +941,13 @@
 </li>
 <li>
 <p>Run</p>
-<p>a.  cd quectel-lg69t-am.0.15.0/p1_runner (or if you cloned from github, cd quectel/p1_runner)</p>
-<p>b.  deactivate (This should get you out of the current environment)</p>
-<p>c.  wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"</p>
-<p>d.  bash Miniforge-pypy3-Linux-aarch64.sh   </p>
-<p>e.  Reboot the jetson   </p>
-<p>f.  mamba create --name py37 -c conda-forge python=3.7 pip   </p>
-<p>g.  mamba activate py37   </p>
+<p>a.  deactivate (This should get you out of the current environment)</p>
+<p>b.  wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"</p>
+<p>c.  bash Miniforge-pypy3-Linux-aarch64.sh   </p>
+<p>d.  Reboot the jetson   </p>
+<p>e.  mamba create --name py37 -c conda-forge python=3.7 pip   </p>
+<p>f.  mamba activate py37</p>
+<p>g.   cd quectel-lg69t-am.0.15.0/p1_runner (or if you cloned from github, cd quectel/p1_runner)</p>
 <p>h.  python3 -m pip install -r requirements.txt</p>
 <pre><code>i.  %If this fails, you can try just going to the p1_runner
     directory and running the python3 bin/config_tool.py
